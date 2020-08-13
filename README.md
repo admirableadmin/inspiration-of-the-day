@@ -1,0 +1,1 @@
+# Inspiration-of-the-day
