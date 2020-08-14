@@ -38,9 +38,9 @@ var app = new Vue({
         quoteOf: function (day) {
             console.log("quoteOf", day)
             var id = this.idbyDay(day);
-            this.show = this.quotes[id];
             if (id === -1)
                 id = 0;
+            this.show = this.quotes[id];
             if (id > 0)
                 this.last = this.quotes[this.idbyDay(day) - 1].day;
             else
