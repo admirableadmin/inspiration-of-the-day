@@ -6,9 +6,7 @@ const routes = [
     { path: '/show/:day', component: Show },
     { path: '/', redirect: '/show/' + this.today }
 ]
-const router = new VueRouter({
-  routes
-})
+const router = new VueRouter({routes})
 var app = new Vue({
     router,
     el: '#app',
@@ -42,11 +40,11 @@ var app = new Vue({
             var id = this.idbyDay(day);
             this.show = this.quotes[id];
             if (id > 0)
-                this.last = this.quotes[this.idbyDay(day)-1].day;
+                this.last = this.quotes[this.idbyDay(day) - 1].day;
             else
                 this.last = '';
             if (id >= 0 && id < this.quotes.length - 1 && id < this.idbyDay(this.today))
-                this.next = this.quotes[this.idbyDay(day)+1].day;
+                this.next = this.quotes[this.idbyDay(day) + 1].day;
             else
                 this.next = '';
         },
