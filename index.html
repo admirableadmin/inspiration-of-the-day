@@ -18,18 +18,16 @@
     .next { float:right; }
     </style>
     <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
 </head>
 <body>
 <div id="app">
     <section>
         <h1><a href="index.html" :title="today">Inspiration des Tages</a></h1>
-        <article>
-            <p>{{ show.message }}</p>
-            <h2>{{ show.author }}</h2>
-        </article>
+        <router-view></router-view>
         <nav>
-            <a class="button prev" href="#last" v-on:click="quoteOf(last)" v-if="last" :title="last">&lt;&lt; vergangenes</a>
-            <a class="button next" href="#next" v-on:click="quoteOf(next)" v-if="next" :title="next">n&auml;chstes &gt;&gt;</a>
+            <router-link class="button prev" :to="{ path: '/show/' + this.last }" v-if="last" :title="last">&lt;&lt; vergangenes</router-link>
+            <router-link class="button next" :to="{ path: '/show/' + this.next }" v-if="next" :title="next">n&auml;chstes &gt;&gt;</router-link>
         </nav>
     </section>
 </div>
