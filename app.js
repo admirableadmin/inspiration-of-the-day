@@ -1,4 +1,16 @@
+this.today = 'f1';
+const Show = {
+    template: '<article>{{ this.$router.app.quoteOf(this.$route.params.day) }}<p>{{ this.$router.app.show.message }}</p><h2>{{ this.$router.app.show.author }}</h2></article>'
+}
+const routes = [
+    { path: '/show/:day', component: Show },
+    { path: '/', redirect: '/show/' + this.today }
+]
+const router = new VueRouter({
+  routes
+})
 var app = new Vue({
+    router,
     el: '#app',
     data: {
         quotes: [
@@ -20,11 +32,13 @@ var app = new Vue({
                 day: 'm1'
             }
         ],
+        today: this.today,
         last: '',
         next: ''
     },
     methods: {
         quoteOf: function (day) {
+            console.log("quoteOf", day)
             var id = this.idbyDay(day);
             this.show = this.quotes[id];
             if (id > 0)
@@ -41,7 +55,6 @@ var app = new Vue({
         }
     },
     created: function () {
-        this.today = 'f1';
         this.quoteOf(this.today);
     }
 })
