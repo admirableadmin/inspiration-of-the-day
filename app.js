@@ -1,4 +1,4 @@
-this.today = 'f1';
+this.today = new Date().toLocaleString("de-de", {day: "numeric", month: "long"}).replace(" ", "");
 const Show = {
     template: '<article>{{ this.$router.app.quoteOf(this.$route.params.day) }}<p>{{ this.$router.app.show.message }}</p><h2>{{ this.$router.app.show.author }}</h2></article>'
 }
@@ -15,19 +15,19 @@ var app = new Vue({
             {
                 message: 'Hello Vue.js!',
                 author: 'demo',
-                day: 'j1'
+                day: '1.Januar'
             }, {
                 message: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
                 author: 'Lorem ipsum',
-                day: 'j2'
+                day: '1.Februar'
             }, {
                 message: 'Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.',
                 author: 'Lorem ipsum',
-                day: 'f1'
+                day: '15.August'
             }, {
                 message: 'Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. ',
                 author: 'Lorem ipsum',
-                day: 'm1'
+                day: '31.Dezember'
             }
         ],
         today: this.today,
