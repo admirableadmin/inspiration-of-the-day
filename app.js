@@ -31,7 +31,7 @@ var app = new Vue({
             }
         ],
         today: this.today,
-        last: '',
+        prev: '',
         next: ''
     },
     methods: {
@@ -39,9 +39,9 @@ var app = new Vue({
             console.log("quoteOf", day)
             var id = this.idbyDay(day);
             this.show = this.quotes[id];
-            this.last = '';
+            this.prev = '';
             if (id > 0)
-                this.last = this.quotes[this.idbyDay(day) - 1].day;
+                this.prev = this.quotes[this.idbyDay(day) - 1].day;
             this.next = '';
             if (id >= 0 && id < this.quotes.length - 1 && id < this.idbyDay(this.today))
                 this.next = this.quotes[this.idbyDay(day) + 1].day;
