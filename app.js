@@ -1,5 +1,5 @@
 this.today = new Date().toLocaleString("de-de", {day: "numeric", month: "long"}).replace(" ", "");
-const Show = {
+const Inspiration = {
     template: '<article><h2>{{ showDay() }}</h2><p>{{ this.$router.app.show.message }}</p><em>{{ this.$router.app.show.author }}</em></article>',
     methods: {
         showDay: function () {
@@ -10,8 +10,8 @@ const Show = {
     }
 }
 const routes = [
-    { path: '/show/:day', component: Show },
-    { path: '/', redirect: '/show/' + this.today }
+    { path: '/inspiration/:day', component: Inspiration },
+    { path: '/', redirect: '/inspiration/' + this.today }
 ]
 const router = new VueRouter({routes})
 var app = new Vue({
