@@ -1,6 +1,13 @@
 this.today = new Date().toLocaleString("de-de", {day: "numeric", month: "long"}).replace(" ", "");
 const Show = {
-    template: '<article>{{ this.$router.app.quoteOf(this.$route.params.day) }}<p>{{ this.$router.app.show.message }}</p><h2>{{ this.$router.app.show.author }}</h2></article>'
+    template: '<article><h2>{{ showDay() }}</h2><p>{{ this.$router.app.show.message }}</p><em>{{ this.$router.app.show.author }}</em></article>',
+    methods: {
+        showDay: function () {
+            console.log("showDay");
+            this.$router.app.changeDay(this.$route.params.day);
+            return this.$router.app.show.day.replace(".", ". ");
+        }
+    }
 }
 const routes = [
     { path: '/show/:day', component: Show },
@@ -35,8 +42,8 @@ var app = new Vue({
         next: ''
     },
     methods: {
-        quoteOf: function (day) {
-            console.log("quoteOf", day)
+        changeDay: function (day) {
+            console.log("changeDay", day);
             var id = this.idbyDay(day);
             this.show = this.quotes[id];
             this.prev = '';
@@ -48,6 +55,7 @@ var app = new Vue({
         },
         idbyDay: function (day) {
             const id = this.quotes.findIndex(q => q.day === day);
+            console.log("idbyDay", day, "id", id);
             return id !== -1 ? id : 0;
         }
     }
