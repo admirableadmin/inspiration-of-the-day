@@ -50,8 +50,5 @@ var app = new Vue({
             const id = this.quotes.findIndex(q => q.day === day);
             return id !== -1 ? id : 0;
         }
-    },
-    created: function () {
-        this.quoteOf(this.today);
     }
 })
