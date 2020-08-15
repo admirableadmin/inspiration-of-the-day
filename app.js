@@ -41,10 +41,10 @@ var app = new Vue({
             this.show = this.quotes[id];
             this.prev = '';
             if (id > 0)
-                this.prev = this.quotes[this.idbyDay(day) - 1].day;
+                this.prev = this.quotes[id - 1].day;
             this.next = '';
             if (id >= 0 && id < this.quotes.length - 1 && id < this.idbyDay(this.today))
-                this.next = this.quotes[this.idbyDay(day) + 1].day;
+                this.next = this.quotes[id + 1].day;
         },
         idbyDay: function (day) {
             const id = this.quotes.findIndex(q => q.day === day);
