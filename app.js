@@ -38,8 +38,6 @@ var app = new Vue({
         quoteOf: function (day) {
             console.log("quoteOf", day)
             var id = this.idbyDay(day);
-            if (id === -1)
-                id = 0;
             this.show = this.quotes[id];
             this.last = '';
             this.next = '';
@@ -49,7 +47,8 @@ var app = new Vue({
                 this.next = this.quotes[this.idbyDay(day) + 1].day;
         },
         idbyDay: function (day) {
-            return this.quotes.findIndex(q => q.day === day);
+            const id = this.quotes.findIndex(q => q.day === day);
+            return id !== -1 ? id : 0;
         }
     },
     created: function () {
