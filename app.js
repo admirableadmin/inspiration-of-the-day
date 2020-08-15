@@ -44,19 +44,19 @@ var app = new Vue({
     methods: {
         changeDay: function (day) {
             console.log("changeDay", day);
-            var id = this.idbyDay(day);
+            var id = this.findDay(day, 0);
             this.show = this.quotes[id];
             this.prev = '';
             if (id > 0)
                 this.prev = this.quotes[id - 1].day;
             this.next = '';
-            if (id >= 0 && id < this.quotes.length - 1 && id < this.idbyDay(this.today))
+            if (id >= 0 && id < this.quotes.length - 1 && id < this.findDay(this.today, 2))
                 this.next = this.quotes[id + 1].day;
         },
-        idbyDay: function (day) {
+        findDay: function (day, ifFalse) {
             const id = this.quotes.findIndex(q => q.day === day);
-            console.log("idbyDay", day, "id", id);
-            return id !== -1 ? id : 0;
+            console.log("findDay", day, "id", id);
+            return id !== -1 ? id : ifFalse;
         }
     }
 })
