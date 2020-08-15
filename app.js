@@ -40,9 +40,9 @@ var app = new Vue({
             var id = this.idbyDay(day);
             this.show = this.quotes[id];
             this.last = '';
-            this.next = '';
             if (id > 0)
                 this.last = this.quotes[this.idbyDay(day) - 1].day;
+            this.next = '';
             if (id >= 0 && id < this.quotes.length - 1 && id < this.idbyDay(this.today))
                 this.next = this.quotes[this.idbyDay(day) + 1].day;
         },
