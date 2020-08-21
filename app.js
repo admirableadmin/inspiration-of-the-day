@@ -1,4 +1,4 @@
-this.today = new Date().toLocaleString("de-de", {day: "numeric", month: "short"}).replaceAll(".", "").replace(" ", "-").toLowerCase();
+const today = new Date().toLocaleString("de-de", {day: "numeric", month: "short"}).replaceAll(".", "").replace(" ", "-").toLowerCase();
 const Inspiration = {
     template: '<article><h2>{{ showDay() }}</h2><p>{{ this.$router.app.show.message }}</p><em>{{ this.$router.app.show.author }}</em></article>',
     methods: {
@@ -11,7 +11,7 @@ const Inspiration = {
 }
 const routes = [
     { path: '/inspiration/:day', component: Inspiration },
-    { path: '/', redirect: '/inspiration/' + this.today }
+    { path: '/', redirect: '/inspiration/' + today }
 ]
 const router = new VueRouter({routes})
 var app = new Vue({
@@ -37,7 +37,7 @@ var app = new Vue({
                 day: '31-dec'
             }
         ],
-        today: this.today,
+        today: today,
         prev: '',
         next: ''
     },
@@ -50,7 +50,7 @@ var app = new Vue({
             if (id > 0)
                 this.prev = this.quotes[id - 1].day;
             this.next = '';
-            if (id >= 0 && id < this.quotes.length - 1 && id < this.findDay(this.today, 2))
+            if (id >= 0 && id < this.quotes.length - 1 && id < this.findDay(today, 2))
                 this.next = this.quotes[id + 1].day;
         },
         findDay: function (day, ifFalse) {
