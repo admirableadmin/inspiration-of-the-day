@@ -19,7 +19,7 @@ const happiness = [
     }
 ]
 const Inspiration = {
-    template: '<article><h2>{{ showDay() }}</h2><p>{{ this.$router.app.show.message }}</p><em>{{ this.$router.app.show.author }}</em></article>',
+    template: '<article><h2>{{ showDay() }}</h2><p>{{ $router.app.show.message }}</p><em>{{ $router.app.show.author }}</em></article>',
     methods: {
         showDay: function () {
             console.log("showDay");
