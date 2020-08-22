@@ -1,4 +1,23 @@
 const today = new Date().toLocaleString("de-de", {day: "numeric", month: "short"}).replace(".", "").replace(".", "").replace(" ", "-").toLowerCase();
+const happiness = [
+    {
+        message: 'Hello Vue.js!',
+        author: 'demo',
+        day: '1-jan'
+    }, {
+        message: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
+        author: 'Lorem ipsum',
+        day: '1-feb'
+    }, {
+        message: 'Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.',
+        author: 'Lorem ipsum',
+        day: '15-aug'
+    }, {
+        message: 'Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. ',
+        author: 'Lorem ipsum',
+        day: '31-dec'
+    }
+]
 const Inspiration = {
     template: '<article><h2>{{ showDay() }}</h2><p>{{ this.$router.app.show.message }}</p><em>{{ this.$router.app.show.author }}</em></article>',
     methods: {
@@ -9,34 +28,17 @@ const Inspiration = {
         }
     }
 }
-const routes = [
-    { path: '/inspiration/:day', component: Inspiration },
-    { path: '/', redirect: '/inspiration/' + today }
-]
-const router = new VueRouter({routes})
-var app = new Vue({
+const router = new VueRouter({
+    routes: [
+        { path: '/happiness/:day', component: Inspiration },
+        { path: '/', redirect: '/happiness/' + today }
+    ]
+})
+const app = new Vue({
     router,
     el: '#app',
     data: {
-        quotes: [
-            {
-                message: 'Hello Vue.js!',
-                author: 'demo',
-                day: '1-jan'
-            }, {
-                message: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
-                author: 'Lorem ipsum',
-                day: '1-feb'
-            }, {
-                message: 'Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.',
-                author: 'Lorem ipsum',
-                day: '15-aug'
-            }, {
-                message: 'Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. ',
-                author: 'Lorem ipsum',
-                day: '31-dec'
-            }
-        ],
+        quotes: happiness,
         today: today,
         prev: '',
         next: ''
