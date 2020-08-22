@@ -1,4 +1,4 @@
-const today = new Date().toLocaleString("de-de", {day: "numeric", month: "short"}).replace(".", "").replace(".", "").replace(" ", "-").toLowerCase();
+const today = new Date().toLocaleString("de-de", {day: "numeric", month: "short"}).replace(/\./g, "").replace(" ", "-").toLowerCase();
 const happiness = [
     {
         message: 'Hello Vue.js!',
