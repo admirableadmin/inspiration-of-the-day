@@ -1,4 +1,4 @@
-const today = new Date().toLocaleString("de-de", {day: "numeric", month: "short"}).replaceAll(".", "").replace(" ", "-").toLowerCase();
+const today = new Date().toLocaleString("de-de", {day: "numeric", month: "short"}).replace(".", "").replace(".", "").replace(" ", "-").toLowerCase();
 const Inspiration = {
     template: '<article><h2>{{ showDay() }}</h2><p>{{ this.$router.app.show.message }}</p><em>{{ this.$router.app.show.author }}</em></article>',
     methods: {
