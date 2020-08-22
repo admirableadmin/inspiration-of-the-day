@@ -24,7 +24,7 @@ const Inspiration = {
         showDay: function () {
             console.log("showDay");
             this.$router.app.changeDay(this.$route.params.day);
-            return new Date(this.$router.app.show.day + "-" + new Date().getFullYear()).toLocaleString("de-de", {day: "numeric", month: "long"});
+            return new Date(this.$router.app.show.day + new Date().getFullYear()).toLocaleString("de-de", {day: "numeric", month: "long", year: "numeric"});
         }
     }
 }
