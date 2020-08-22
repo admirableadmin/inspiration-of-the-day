@@ -15,8 +15,8 @@
         <h1><a href="#/" :title="today">Inspiration des Tages</a></h1>
         <router-view></router-view>
         <nav>
-            <router-link class="button prev" :to="{ path: '/happiness/' + this.prev }" v-if="prev" :title="prev">&lt;&lt; vergangenes</router-link>
-            <router-link class="button next" :to="{ path: '/happiness/' + this.next }" v-if="next" :title="next">n&auml;chstes &gt;&gt;</router-link>
+            <router-link class="button prev" :to="{ path: '/happiness/' + prev }" v-if="prev" :title="prev">&lt;&lt; vergangenes</router-link>
+            <router-link class="button next" :to="{ path: '/happiness/' + next }" v-if="next" :title="next">n&auml;chstes &gt;&gt;</router-link>
         </nav>
     </section>
 </div>
