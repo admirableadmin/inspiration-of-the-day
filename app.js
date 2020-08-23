@@ -19,12 +19,11 @@ const happiness = [
     }
 ]
 const Inspiration = {
-    template: '<article><h2>{{ showDay() }}</h2><p>{{ $router.app.show.message }}</p><em>{{ $router.app.show.author }}</em></article>',
+    template: '<article><h2>{{ showDay() }}{{ $router.app.show.author }}</h2><p>{{ $router.app.show.message }}</p><em>{{ $router.app.show.daylong }}</em></article>',
     methods: {
         showDay: function () {
             console.log("showDay");
             this.$router.app.changeDay(this.$route.params.day);
-            return new Date(this.$router.app.show.day + new Date().getFullYear()).toLocaleString("de-de", {day: "numeric", month: "long", year: "numeric"});
         }
     }
 }
@@ -48,6 +47,7 @@ const app = new Vue({
             console.log("changeDay", day);
             var id = this.findDay(day, 0);
             this.show = this.quotes[id];
+            this.show.daylong = new Date(this.show.day + new Date().getFullYear()).toLocaleString("de-de", {day: "numeric", month: "long", year: "numeric"});
             this.prev = '';
             if (id > 0)
                 this.prev = this.quotes[id - 1].day;
