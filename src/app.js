@@ -43,6 +43,9 @@ const app = new Vue({
         next: ''
     },
     methods: {
+        to: function (part) {
+            return '/happiness/' + part;
+        },
         changeDay: function (day) {
             console.log("changeDay", day);
             var id = this.findDay(day, 0);
