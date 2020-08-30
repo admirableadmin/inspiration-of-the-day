@@ -11,12 +11,13 @@
 </head>
 <body>
 <div id="app">
+    <router-link v-for="category in categories()" v-bind:key="category.id" :to="to(category)"> {{ category }} </router-link>
     <section>
         <h1><a href="#/" :title="today">Inspiration des Tages</a></h1>
         <router-view></router-view>
         <nav>
-            <router-link class="button prev" :to="to(prev)" v-if="prev" :title="prev">&lt;&lt; vergangenes</router-link>
-            <router-link class="button next" :to="to(next)" v-if="next" :title="next">n&auml;chstes &gt;&gt;</router-link>
+            <router-link class="button prev" :to="to(category,prev)" v-if="prev" :title="prev">&lt;&lt; vergangenes</router-link>
+            <router-link class="button next" :to="to(category,next)" v-if="next" :title="next">n&auml;chstes &gt;&gt;</router-link>
         </nav>
     </section>
 </div>
