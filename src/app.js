@@ -4,13 +4,14 @@ const Inspiration = {
     methods: {
         showDay: function () {
             console.log("showDay");
+            this.$router.app.changeCategory(this.$route.params.category);
             this.$router.app.changeDay(this.$route.params.day);
         }
     }
 }
 const router = new VueRouter({
     routes: [
-        { path: '/happiness/:day', component: Inspiration },
+        { path: '/:category/:day', component: Inspiration },
         { path: '/', redirect: '/happiness/' + today }
     ]
 })
@@ -18,14 +19,31 @@ const app = new Vue({
     router,
     el: '#app',
     data: {
-        quotes: quotes.happiness,
+        category: '',
+        quotes: '',
         today: today,
         prev: '',
         next: ''
     },
     methods: {
-        to: function (part) {
-            return '/happiness/' + part;
+        to: function (c=this.category, d=this.today) {
+            return { params: { category: c, day: d }}
+        },
+        categories: function () {
+            return Object.keys(quotes);
+        },
+        changeCategory: function (category) {
+            console.log("changeCategory", category);
+            var id = this.findCategory(category, 0);
+            console.log("changeCategory id", id);
+            this.category = Object.keys(quotes)[id];
+            this.quotes = Object.values(quotes)[id];
+            console.log("changeCategory this.category", this.category, "this.quotes", this.quotes);
+        },
+        findCategory: function (category, ifFalse) {
+            const id = Object.keys(quotes).findIndex(q => q === category);
+            console.log("findCategory", category, "id", id);
+            return id !== -1 ? id : ifFalse;
         },
         changeDay: function (day) {
             console.log("changeDay", day);
