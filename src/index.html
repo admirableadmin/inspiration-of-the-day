@@ -11,7 +11,14 @@
 </head>
 <body>
 <div id="app">
-    <router-link v-for="category in categories()" v-bind:key="category.id" :to="to(category)"> {{ category }} </router-link>
+    <nav id="navigation" aria-label="Menu">
+    <label for="toggle-mobile-menu" aria-label="Menu">&#9776;</label>
+    <input id="toggle-mobile-menu" type="checkbox" />
+    <ul id="main-menu">
+    <router-link v-for="category in categories()" v-bind:key="category.id" :to="to(category)"><li>{{ category }} </li></router-link>
+    <li><a href="https://github.com/andpei/inspiration-of-the-day">About</a></li>
+    </ul>
+    </nav>
     <section>
         <h1><a href="#/" :title="today">Inspiration des Tages</a></h1>
         <router-view></router-view>
