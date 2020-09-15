@@ -9,9 +9,13 @@ const Inspiration = {
         }
     }
 }
+const About = {
+    template: '<article><h2>About</h2><p>Shows a predefined inspiration message of the day.</p><em><a href="https://github.com/andpei/inspiration-of-the-day">Fork me on GitHub</a></em></article>'
+}
 const router = new VueRouter({
     routes: [
         { path: '/:category/:day', name: 'inspiration', component: Inspiration },
+        { path: '/about', component: About },
         { path: '/', redirect: '/happiness/' + today }
     ]
 })
