@@ -11,7 +11,7 @@ const Inspiration = {
 }
 const router = new VueRouter({
     routes: [
-        { path: '/:category/:day', component: Inspiration },
+        { path: '/:category/:day', name: 'inspiration', component: Inspiration },
         { path: '/', redirect: '/happiness/' + today }
     ]
 })
@@ -27,7 +27,7 @@ const app = new Vue({
     },
     methods: {
         to: function (c=this.category, d=this.today) {
-            return { params: { category: c, day: d }}
+            return { name: 'inspiration', params: { category: c, day: d }}
         },
         categories: function () {
             return Object.keys(quotes);
