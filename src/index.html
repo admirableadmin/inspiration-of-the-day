@@ -16,7 +16,7 @@
     <input id="toggle-mobile-menu" type="checkbox" />
     <ul id="main-menu">
     <router-link v-for="category in categories()" v-bind:key="category.id" :to="to(category)"><li>{{ category }} </li></router-link>
-    <li><a href="https://github.com/andpei/inspiration-of-the-day">About</a></li>
+    <li><a href="#/about">About</a></li>
     </ul>
     </nav>
     <section>
