@@ -1,4 +1,4 @@
-body { text-align: center; background-color: #eee; font: 20px Helvetica, sans-serif; margin: 0; padding: 0; }
+body { background-color: #eee; font: 20px Helvetica, sans-serif; margin: 0; padding: 0; }
 article { display: block; text-align: left; background-color: #fff; border-radius: 1em; padding: 30px; }
 h1 { font-size: 50px; margin-top: 0px; margin-bottom: 15px; }
 h2 { font-size: 15px; font-weight: normal; }
@@ -11,11 +11,11 @@ a.button { padding: 8px 16px; background-color: #4CAF50; color: #fff; }
 a.button:hover { background-color: #333; }
 .prev { float: left; }
 .next { float: right; }
-#navigation { display: block; background: #000; height: 48px; margin-top: 0px; }
-#navigation #main-menu { margin-top: 0px; }
+#navigation { display: block; background: #000; margin-top: 0px; text-align: right; }
+#navigation #main-menu { margin-top: 0px; text-align: center; }
 #navigation > input { display: none; }
 #navigation > label { display: none; height: auto; }
-#navigation > input:checked + #main-menu { display: block; clear: both; top: 48px; position: relative; background: #000; color: #4CAF50; }
+#navigation > input:checked + #main-menu { display: block; clear: both; position: relative; background: #000; color: #4CAF50; }
 #navigation ul li { display: inline-block; padding: 12px 10px; }
 #navigation ul li:first-letter { text-transform: capitalize; }
 #navigation a { text-decoration: none; color: #4CAF50; }
@@ -25,7 +25,7 @@ a.button:hover { background-color: #333; }
     h1 { font-size: 30px; }
     section { width: auto; margin: 0 auto; padding: 1em; }
     #navigation #main-menu { display: none; }
-    #navigation > label { display: block; font-size: 36px; color: #4CAF50; position: absolute; right: 3px; width: 36px; padding: 3px; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+    #navigation > label { display: inline-block; font-size: 26px; color: #4CAF50; background: #333; padding: 5px 10px; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
     #navigation ul li { display: block; }
 }
 @media (hover: none) {
