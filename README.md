@@ -36,3 +36,29 @@ day | author | message
 31-dec | |
 
 2. run a macro to export all quotes to json: [OpenOffice Export to JSON](https://gist.github.com/aaronhoogstraten/49b9c0f5e4ac705ebe51)
+
+For quotes on "happiness", the result might look like:
+
+```
+const quotes = {
+    happiness: [
+        {
+            message: 'Hello Vue.js!',
+            author: 'demo',
+            day: '1-jan'
+        }, {
+            message: '',
+            author: '',
+            day: '1-feb'
+        }, {
+            message: '',
+            author: '',
+            day: '15-aug'
+        }, {
+            message: '',
+            author: '',
+            day: '31-dec'
+        }
+    ]
+}
+```
