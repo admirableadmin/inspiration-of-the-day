@@ -16,9 +16,13 @@ The following packages can be installed optionally:
 
 	$ sudo apt install minify
 
-Minify the code:
+## Deployment
 
-	$ minify --html-keep-end-tags -rv -o . .
+In this repo, you can simply run `make` to prepare the HTML files for deployment:
+
+	$ make
+
+Now, you just need to put the `deploy` directory on a web server.
 
 ## Writing quotes
 
