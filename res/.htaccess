@@ -1,0 +1,10 @@
+# www erzwingen (Domain bitte anpassen)
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^kerngesund\.com$ [NC]
+RewriteRule ^(.*)$ http://www.kerngesund.com/$1 [R=301,L]
+
+# HTTPS erzwingen
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond %{ENV:HTTPS} !=on
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]

@@ -1,4 +1,4 @@
-FILES = res/google6234ba5ae9225c4a.html res/quotes.js
+FILES = res/google6234ba5ae9225c4a.html res/quotes.js res/.htaccess
 SERVER = tech@ganymed.uberspace.de
 HTDOCS = ~/www/www.kerngesund.com/
 
