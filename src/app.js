@@ -2,14 +2,21 @@ function today() {
     console.log("today");
     return new Date().toLocaleString("en-GB", {day: "numeric", month: "short"}).replace(/\./g, "").replace(" ", "-").toLowerCase();
 }
+const Search = {
+    template: '<article><h2>{{author}}</h2><p v-for="quote in $router.app.filterAuthor(author)">{{quote.message}}</p><em>All inspirations with {{$router.app.category}}.</em></article>',
+    props: ['author']
+}
 const Inspiration = {
-    template: '<article><h2>{{ showDay() }}{{ $router.app.show.author }}</h2><p>{{ $router.app.show.message }}</p><em>{{ $router.app.show.daylong }}</em></article>',
+    template: '<article><h2>{{ showDay() }}<router-link :to="toSearch($router.app.show.author)">{{ $router.app.show.author }}</router-link></h2><p>{{ $router.app.show.message }}</p><em>{{ $router.app.show.daylong }}</em></article>',
     methods: {
         showDay: function () {
             console.log("showDay");
             this.$router.app.today = today();
             this.$router.app.changeCategory(this.$route.params.category);
             this.$router.app.changeDay(this.$route.params.day);
+        },
+        toSearch: function (a) {
+            return { name: 'search', params: { author: a }}
         }
     }
 }
@@ -18,6 +25,7 @@ const About = {
 }
 const router = new VueRouter({
     routes: [
+        { path: '/search/:author', name: 'search', component: Search, props: true },
         { path: '/:category/:day', name: 'inspiration', component: Inspiration },
         { path: '/about', component: About },
         { path: '/', redirect: '/happiness/' + today() }
@@ -69,6 +77,9 @@ const app = new Vue({
             const id = this.quotes.findIndex(q => q.day === day);
             console.log("findDay", day, "id", id);
             return id !== -1 ? id : ifFalse;
+        },
+        filterAuthor: function (author) {
+            return this.quotes.filter(q => q.author === author);
         }
     }
 })
