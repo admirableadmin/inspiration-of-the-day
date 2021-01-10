@@ -17,7 +17,7 @@ format: clean
 	sed -i "s/ past/ vergangenes/g" deploy/index.html
 	sed -i "s/next /n\&auml;chstes /g" deploy/index.html
 	# about
-	sed -i "s*Shows a predefined inspiration message of the day.</p>*Zeigt eine vordefinierte Inspirationsbotschaft des Tages an.</p><p>Kerngesund ist ein Projekt von <a title="www.andreas.peichert.com" href="http://www.andreas.peichert.com/" rel="me">Andreas Peichert</a>.</p>*" deploy/app.js
+	sed -i "s*Shows a predefined inspiration message of the day.</p>*Zeigt t\&auml;glich eine vordefinierte Inspirationsbotschaft an.</p><p>Kerngesund ist ein Projekt von <a title="www.andreas.peichert.com" href="http://www.andreas.peichert.com/" rel="me">Andreas Peichert</a>.</p>*" deploy/app.js
 	# google
 	sed -i "s*</head>*\
 <!-- Global site tag (gtag.js) - Google Analytics -->\n\
