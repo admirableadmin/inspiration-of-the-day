@@ -9,7 +9,7 @@ html: clean
 	# remove debug output
 	sed -i "/console.log/d" deploy/app.js
 	# minify code
-	command -v minify && minify --html-keep-document-tags --html-keep-end-tags -rv -o deploy deploy
+	command -v minify && minify --html-keep-document-tags --html-keep-end-tags -rv -o deploy deploy || true
 
 format: clean
 	# l10n
