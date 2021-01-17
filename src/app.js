@@ -3,7 +3,18 @@ function today() {
     return new Date().toLocaleString("en-GB", {day: "numeric", month: "short"}).replace(/\./g, "").replace(" ", "-").toLowerCase();
 }
 const Search = {
-    template: '<article><h2>{{author}}</h2><p v-for="quote in $router.app.filterAuthor(author)">{{quote.message}}</p><em>All inspirations with {{$router.app.category}}.</em></article>',
+    template: '<article><h2>{{author}}</h2>\
+    <ul>\
+        <li v-for="category in $router.app.categories()">\
+            {{category}}\
+            <ul>\
+                <li v-for="quote in $router.app.filterAuthor(category, author)">\
+                <router-link :to="$router.app.to(category, quote.day)">{{quote.day}}</router-link> {{quote.message.substring(0, 40)}} &hellip;\
+                </li>\
+            </ul>\
+        </li>\
+    </ul>\
+    <em>All inspirations from the same author.</em></article>',
     props: ['author']
 }
 const Inspiration = {
@@ -78,8 +89,9 @@ const app = new Vue({
             console.log("findDay", day, "id", id);
             return id !== -1 ? id : ifFalse;
         },
-        filterAuthor: function (author) {
-            return this.quotes.filter(q => q.author === author);
+        filterAuthor: function (category, author) {
+            console.log("filterAuthor", category, "author", author);
+            return quotes[category].filter(q => q.author === author);
         }
     }
 })
