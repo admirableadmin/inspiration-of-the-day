@@ -25,7 +25,7 @@ const quotes = {
             day: '1-jan'
         }, {
             message: 'love ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
-            author: 'love ipsum',
+            author: 'Lorem ipsum',
             day: '1-feb'
         }, {
             message: 'love wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.',
