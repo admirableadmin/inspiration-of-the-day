@@ -11,6 +11,8 @@ a.button { padding: 8px 16px; background-color: #4CAF50; color: #fff; }
 a.button:hover { background-color: #333; }
 .prev { float: left; }
 .next { float: right; }
+#navigation #home { float: left; padding: 8px; }
+#navigation #home a img { width: 32px; height: 32px; }
 #navigation { display: block; background: #000; margin-top: 0px; text-align: right; }
 #navigation #main-menu { margin-top: 0px; text-align: center; }
 #navigation > input { display: none; }
