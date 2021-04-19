@@ -548,7 +548,7 @@
     {
         "day": "19-apr",
         "author": "Friedrich von Schiller",
-        "message": "Raum ist in der kleinsten Hütte. Für ein glückliche liebend Paar."
+        "message": "Raum ist in der kleinsten Hütte. Für ein glücklich liebend Paar."
     },
     {
         "day": "20-apr",
