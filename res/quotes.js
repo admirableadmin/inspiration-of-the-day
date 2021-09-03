@@ -1221,152 +1221,152 @@
         "message": "Glück in der Liebe und Glück im Spiel, das ist für einen Menschen zu viel."
     },
     {
-        "day": "1-sep",
+        "day": "1-sept",
         "author": "Paul Fleming",
         "message": "Tränen der Trauer, Tränen des Glücks; es kommt auf die Seite an, wohin man blickt."
     },
     {
-        "day": "2-sep",
+        "day": "2-sept",
         "author": "Johann Wolfgang von Goethe",
         "message": "Man pflegt das Glück wegen seiner großen Beweglichkeit kugelrund zu nennen, und zwar doppelt mit Recht; denn es gilt diese Vergleichung auch in einem anderen Sinne. Ruhig vor Augen stehend, zeigt die Kugel sich dem Betrachtenden als ein befriedigtes, vollkommenes, in sich abgeschlossenes Wesen; daher kann sie aber auch, so wie der Glückliche, unsere Aufmerksamkeit nicht lange fesseln."
     },
     {
-        "day": "3-sep",
+        "day": "3-sept",
         "author": "Blaise Pascal",
         "message": "Instinktiv empfinden wir, dass wir unser Glück außer uns suchen müssen."
     },
     {
-        "day": "4-sep",
+        "day": "4-sept",
         "author": "Kurt Tucholsky",
         "message": "Glück ist der Zustand den man nicht spürt."
     },
     {
-        "day": "5-sep",
+        "day": "5-sept",
         "author": "Wilhelmine Heimburg",
         "message": "Es ist überall heimlich und traut neben einem Menschen, den man gern hat."
     },
     {
-        "day": "6-sep",
+        "day": "6-sept",
         "author": "Japanisches Sprichwort",
         "message": "Wo Glück ist, ist auch Leid."
     },
     {
-        "day": "7-sep",
+        "day": "7-sept",
         "author": "Johann Wolfgang von Goethe",
         "message": "Hebt mich das Glück, so bin ich froh und sing in dulci Jubilo; senkt sich das Rad und quetscht mich nieder, so denk ich: Nun, es hebt sich wieder!"
     },
     {
-        "day": "8-sep",
+        "day": "8-sept",
         "author": "Asiatisches Sprichwort",
         "message": "Keinem nützt ein Glück, das zu später Abendstunde kommt, dass man es im Finsteren gar nicht mehr sehen kann."
     },
     {
-        "day": "9-sep",
+        "day": "9-sept",
         "author": "Friedrich Martin von Bodenstedt",
         "message": "Weiß noch keiner, was ihm frommt hier auf dunklem Pfade. Keiner zwingt das Glück, es kommt unverhofft als Gnade."
     },
     {
-        "day": "10-sep",
+        "day": "10-sept",
         "author": "Immanuel Kant",
         "message": "Das größte Glück des Menschen ist, dass er selber Urheber seiner Glückseligkeit ist, wenn er fühlt, das zu genießen, was er selber sich erworben hat."
     },
     {
-        "day": "11-sep",
+        "day": "11-sept",
         "author": "Johann Nepomuk Nestroy",
         "message": "Glücklich sein ist bei weitem nicht dasselbe, wie aufhören unglücklich zu sein."
     },
     {
-        "day": "12-sep",
+        "day": "12-sept",
         "author": "Deutsches Sprichwort",
         "message": "Der Weg zum wahren Glück liegt im Augenblick."
     },
     {
-        "day": "13-sep",
+        "day": "13-sept",
         "author": "Luc de Clapiers Vauvenargues",
         "message": "Wie sollte uns Sorglosigkeit glücklich machen, wenn all unsere Vorsorge uns nicht glücklich werden ließ?"
     },
     {
-        "day": "14-sep",
+        "day": "14-sept",
         "author": "Asiatisches Sprichwort",
         "message": "Wer das Feld seines Glücks verbreitern will, muss den Grund seines Herzens gleichmäßig machen."
     },
     {
-        "day": "15-sep",
+        "day": "15-sept",
         "author": "Paul Fleming",
         "message": "Läuft das Glück auch mal zu Zeiten anders als man meint, ein getreues Herz hilft streiten gegen alles, was uns Feind."
     },
     {
-        "day": "16-sep",
+        "day": "16-sept",
         "author": "Oscar Wilde",
         "message": "Nichts macht so alt wie Glück."
     },
     {
-        "day": "17-sep",
+        "day": "17-sept",
         "author": "Peter Rosegger",
         "message": "Ich suche mein Glück nicht im Zusammentreffen und Genießen irdischer Güter, denn darin ist es nicht zu finden. Ich habe mein Glück stets, in der Natur und in der Arbeitsfreude gefunden."
     },
     {
-        "day": "18-sep",
+        "day": "18-sept",
         "author": "Asiatisches Sprichwort",
         "message": "Kommt das Glück, wer kommt da nicht mit? Kommt das Glück nicht, wer kommt dann?"
     },
     {
-        "day": "19-sep",
+        "day": "19-sept",
         "author": "Friedrich der Große",
         "message": "Glück und Zufall sind zwei sinnlose Wörter."
     },
     {
-        "day": "20-sep",
+        "day": "20-sept",
         "author": "Friedrich Nietzsche",
         "message": "Glück aber, welches auch sei, gibt Luft, Licht und freie Bewegung."
     },
     {
-        "day": "21-sep",
+        "day": "21-sept",
         "author": "Franz Kafka",
         "message": "Theoretisch gibt es eine vollkommene Glücksmöglichkeit: An das Unzerstörbare in sich zu glauben und nicht zu ihm streben."
     },
     {
-        "day": "22-sep",
+        "day": "22-sept",
         "author": "Voltaire",
         "message": "Die meisten Menschen sind, um glücklich zu sein, nicht gescheit genug oder nicht dumm genug."
     },
     {
-        "day": "23-sep",
+        "day": "23-sept",
         "author": "Ägyptisches Sprichwort",
         "message": "Glück widerfährt dir nicht – Glück findet der, der danach sucht."
     },
     {
-        "day": "24-sep",
+        "day": "24-sept",
         "author": "Peter Rosegger",
         "message": "Glücklichsein, das ist des Menschen erster Wunsch und letztes Ziel, er erreicht es im Bunde mit der gütigen Natur; er erreicht es mit der Leuchte des Schönen in der Kunst; er erreicht es auf der Stufenleiter der Tugenden."
     },
     {
-        "day": "25-sep",
+        "day": "25-sept",
         "author": "Christian Friedrich Hebbel",
         "message": "Mache dir das Leben ja nicht sauer. Und renne ruhig gegen die Mauer mit deinem Kopf; hast du nur Glück, so weicht die Mauer vor dir zurück."
     },
     {
-        "day": "26-sep",
+        "day": "26-sept",
         "author": "Eduard Acda",
         "message": "Glück ist ein Defekt im Schicksal."
     },
     {
-        "day": "27-sep",
+        "day": "27-sept",
         "author": "Asiatisches Sprichwort",
         "message": "Ein Mensch von Sanftmut und gutem Charakter schafft sich selbst sein Glück."
     },
     {
-        "day": "28-sep",
+        "day": "28-sept",
         "author": "Emanuel Wertheimer",
         "message": "Auf den obersten Stufen des Glücks begegnet man noch mehr Wünschen und Bedürfnissen als auf den untersten."
     },
     {
-        "day": "29-sep",
+        "day": "29-sept",
         "author": "Aristoteles",
         "message": "Denn das Glück flößt den meisten Übermut ein, das Unglück Besonnenheit."
     },
     {
-        "day": "30-sep",
+        "day": "30-sept",
         "author": "Franz Kafka",
         "message": "Das Glück begreifen, dass der Boden, auf dem du stehst, nicht größer sein kann, als die zwei Füße ihn bedecken."
     },
