@@ -16,6 +16,8 @@ format: clean
 	sed -i "s/Inspiration of the day/Inspiration des Tages/g" deploy/index.html
 	sed -i "s/ past/ vergangenes/g" deploy/index.html
 	sed -i "s/next /n\&auml;chstes /g" deploy/index.html
+	# search
+	sed -i "s/All inspirations from the same author./Alle Inspirationen vom selben Autor./g" deploy/app.js
 	# about
 	sed -i "s*Shows a predefined inspiration message of the day.</p>*Zeigt t\&auml;glich eine vordefinierte Inspirationsbotschaft an.</p><p>Kerngesund ist ein Projekt von <a title="www.andreas.peichert.com" href="http://www.andreas.peichert.com/" rel="me">Andreas Peichert</a>.</p>*" deploy/app.js
 	# google
