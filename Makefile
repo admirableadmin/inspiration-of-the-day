@@ -2,7 +2,7 @@ FILES = res/google6234ba5ae9225c4a.html res/quotes.js res/.htaccess res/robots.t
 SERVER = tech@ganymed.uberspace.de
 HTDOCS = ~/www/www.kerngesund.com/
 
-html: clean
+production: clean
 	# use the minified version
 	sed -i "s/vue.js/vue.min.js/" deploy/index.html
 	sed -i "s/vue-router.js/vue-router.min.js/" deploy/index.html
@@ -11,7 +11,7 @@ html: clean
 	# minify code
 	command -v minify && minify --html-keep-document-tags --html-keep-end-tags -rv -o deploy deploy || true
 
-format: clean
+branding: clean
 	# l10n
 	sed -i "s/Inspiration of the day/Inspiration des Tages/g" deploy/index.html
 	sed -i "s/ past/ vergangenes/g" deploy/index.html
@@ -44,4 +44,4 @@ clean:
 	# create directory for deployment
 	rm -rf deploy && cp -a src deploy
 
-all: format html install
+all: branding production install
