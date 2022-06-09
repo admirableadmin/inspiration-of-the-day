@@ -23,12 +23,12 @@ branding: clean
 	# google
 	sed -i "s*</head>*\
 <!-- Global site tag (gtag.js) - Google Analytics -->\n\
-<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-472477-6\"></script>\n\
+<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-QMWNCXPSRY\"></script>\n\
 <script>\n\
   window.dataLayer = window.dataLayer || [];\n\
   function gtag(){dataLayer.push(arguments);}\n\
   gtag('js', new Date());\n\
-  gtag('config', 'UA-472477-6');\n\
+  gtag('config', 'G-QMWNCXPSRY');\n\
 </script>\n\
 </head>*g" deploy/index.html
 	# branding
