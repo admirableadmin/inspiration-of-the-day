@@ -21,11 +21,10 @@ export default {
       console.log("newtoday");
       return new Date().toLocaleString("en-GB", {day: "numeric", month: "short"}).replace(/\./g, "").replace(" ", "-").toLowerCase();
     },
-    showDay: function() {
-      console.log("showDay");
-      //this.today = this.newtoday();
-      this.changeCategory(this.$route.params.category);
-      this.changeDay(this.$route.params.day);
+    showDay: function (c=this.$route.params.category, d=this.$route.params.day) {
+      console.log("showDay c", c, "d", d);
+      this.changeCategory(c);
+      this.changeDay(d);
     },
     to: function (c=this.category, d=this.today) {
       return { name: 'inspiration', params: { category: c, day: d }}
@@ -81,7 +80,7 @@ export default {
     <TheQuote :author="show.author" :message="show.message" :daylong="show.daylong" />
   </article>
   <nav>
-    <RouterLink class="button prev" :to="to(category,prev)" v-if="prev" :title="prev">&lt;&lt; past</RouterLink>
-    <RouterLink class="button next" :to="to(category,next)" v-if="next" :title="next">next &gt;&gt;</RouterLink>
+    <RouterLink class="button prev" :to="to(category,prev)" v-if="prev" :title="prev" @click="showDay(category,prev)">&lt;&lt; past</RouterLink>
+    <RouterLink class="button next" :to="to(category,next)" v-if="next" :title="next" @click="showDay(category,next)">next &gt;&gt;</RouterLink>
   </nav>
 </template>
