@@ -1,23 +1,21 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <nav id="navigation" aria-label="Menu">
+    <span id="home"><RouterLink to="/"><img src="favicon.ico"/></RouterLink></span>
+    <label for="toggle-mobile-menu" aria-label="Menu">&#9776;</label>
+    <input id="toggle-mobile-menu" type="checkbox" />
+    <ul id="main-menu">
+      <li><RouterLink to="/">Home</RouterLink></li>
+      <li><RouterLink to="/about">About</RouterLink></li>
+    </ul>
+  </nav>
+  <section>
+    <h1><RouterLink to="/">Inspiration of the day</RouterLink></h1>
+    <RouterView />
+  </section>
 </template>
 
 <style scoped>

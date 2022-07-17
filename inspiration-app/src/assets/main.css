@@ -1,35 +1,35 @@
-@import "./base.css";
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+body { background-color: #333; font: 20px Helvetica, sans-serif; margin: 0; padding: 0; background-image: url('background.jpg'); height: 600px; background-position: center; background-repeat: no-repeat; background-size: cover;  position: relative; }
+article { display: block; text-align: left; background-color: #fff; border-radius: 1em; padding: 30px; }
+h1 { font-size: 50px; margin-top: 0px; }
+h2 { font-size: 15px; font-weight: normal; }
+em { display: block; text-align: right; }
+a { color: #407ad6; text-decoration: none; }
+a:hover { color: #333; }
+section { width: 650px; margin: 1em auto; padding: 50px; }
+nav { width: 100%; margin-top: 30px; }
+a.button { padding: 8px 16px; background-color: #4CAF50; color: #fff; }
+a.button:hover { background-color: #333; }
+.prev { float: left; }
+.next { float: right; }
+#navigation #home { float: left; padding: 8px; }
+#navigation #home a img { width: 32px; height: 32px; }
+#navigation { display: block; background: #000; margin-top: 0px; text-align: right; }
+#navigation #main-menu { margin-top: 0px; text-align: center; }
+#navigation > input { display: none; }
+#navigation > label { display: none; height: auto; }
+#navigation > input:checked + #main-menu { display: block; clear: both; position: relative; background: #000; color: #4CAF50; }
+#navigation ul li { display: inline-block; padding: 12px 10px; }
+#navigation ul li:first-letter { text-transform: capitalize; }
+#navigation a { text-decoration: none; color: #407ad6; }
+@media (max-width: 750px) {
+    article { padding: 10px; }
+    h1 { font-size: 30px; }
+    section { width: auto; margin: 0 auto; padding: 1em; }
+    #navigation #main-menu { display: none; }
+    #navigation > label { display: inline-block; font-size: 26px; color: #407ad6; background: #333; padding: 5px 10px; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+    #navigation ul li { display: block; }
 }
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+@media (hover: none) {
+    h1 a:hover { color: #4CAF50; }
+    a.button:hover { background-color: #4CAF50; }
 }
