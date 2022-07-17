@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <h1>This is an about page</h1>
-  </div>
+  <article>
+    <h2>About</h2>
+    <p>Shows a predefined inspiration message of the day.</p>
+    <em><a href="https://github.com/admirableadmin/inspiration-of-the-day">Fork me on GitHub</a></em>
+  </article>
 </template>
 
 <style>
