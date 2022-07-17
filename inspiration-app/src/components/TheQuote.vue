@@ -9,7 +9,7 @@
     required: true
   },
   daylong: {
-    type: Date,
+    type: String,
     required: true
   }
 })
