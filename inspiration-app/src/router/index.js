@@ -1,15 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import QuoteView from '../views/QuoteView.vue'
+
+function today() {
+    console.log("today");
+    return new Date().toLocaleString("en-GB", {day: "numeric", month: "short"}).replace(/\./g, "").replace(" ", "-").toLowerCase();
+}
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
-    { path: '/:category/:day', name: 'inspiration', component: HomeView },
+    { path: '/:category/:day', name: 'quote', component: QuoteView },
     {
       path: '/about',
       name: 'about',
@@ -17,7 +17,8 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
-    }
+    },
+    { path: '/', redirect: '/happiness/' + today() }
   ]
 })
 
