@@ -20,13 +20,13 @@ export default {
       console.log("newtoday");
       return new Date().toLocaleString("en-GB", {day: "numeric", month: "short"}).replace(/\./g, "").replace(" ", "-").toLowerCase();
     },
-    showDay: function (c=this.$route.params.category, d=this.$route.params.day) {
-      console.log("showDay c", c, "d", d);
+    showQuote: function (c, d) {
+      console.log("showQuote c", c, "d", d);
       this.changeCategory(c);
       this.changeDay(d);
     },
     to: function (c=this.category, d=this.today) {
-      return { name: 'inspiration', params: { category: c, day: d }}
+      return { name: 'quote', params: { category: c, day: d }}
     },
     categories: function () {
       return Object.keys(quotes);
@@ -68,7 +68,8 @@ export default {
   },
   created() {
     console.log(quotes);
-    this.showDay();
+    // on pageload show quote from URL by category and day
+    this.showQuote(this.$route.params.category, this.$route.params.day);
     console.log(this.show);
   }
 }
@@ -81,13 +82,13 @@ export default {
     <input id="toggle-mobile-menu" type="checkbox" />
     <ul id="main-menu">
       <li><RouterLink to="/">Home</RouterLink></li>
-      <RouterLink v-for="category in categories()" v-bind:key="category.id" :to="to(category)"><li>{{ category }} </li></RouterLink>
+      <RouterLink v-for="category in categories()" v-bind:key="category.id" :to="to(category)" @click="showQuote(category,today)"><li>{{ category }} </li></RouterLink>
       <li><RouterLink to="/about">About</RouterLink></li>
     </ul>
   </nav>
   <section>
     <h1><RouterLink to="/">Inspiration of the day</RouterLink></h1>
-    <RouterView :author="show.author" :message="show.message" :daylong="show.daylong" :prev="prev" :next="next" :toprev="to(category,prev)" :tonext="to(category,next)" :category="category" @prev-next-click="showDay" />
+    <RouterView :show="show" :prev="prev" :next="next" :category="category" :today="today" @prev-next-click="showQuote" />
   </section>
 </template>
 
