@@ -18,6 +18,7 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
     },
+    { path: '/search/:author', name: 'search', component: () => import('../views/SearchView.vue'), props: true },
     { path: '/', redirect: '/happiness/' + today() }
   ]
 })

@@ -22,13 +22,16 @@ export default {
     to: function (c=this.category, d=this.today) {
       return { name: 'quote', params: { category: c, day: d }}
     },
+    toSearch: function (a) {
+      return { name: 'search', params: { author: a }}
+    },
   }
 };
 </script>
 
 <template>
   <article>
-    <h2>{{ show.author }}</h2>
+    <h2><RouterLink :to="toSearch(show.author)">{{ show.author }}</RouterLink></h2>
     <p>{{ show.message }}</p>
     <em>{{ show.daylong }}</em>
   </article>

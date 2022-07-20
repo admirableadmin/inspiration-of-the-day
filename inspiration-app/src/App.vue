@@ -61,10 +61,6 @@ export default {
       console.log("findDay", day, "id", id);
       return id !== -1 ? id : ifFalse;
     },
-    filterAuthor: function (category, author) {
-      console.log("filterAuthor", category, "author", author);
-      return quotes[category].filter(q => q.author === author);
-    }
   },
   created() {
     console.log(quotes);
@@ -88,7 +84,7 @@ export default {
   </nav>
   <section>
     <h1><RouterLink to="/">Inspiration of the day</RouterLink></h1>
-    <RouterView :show="show" :prev="prev" :next="next" :category="category" :today="today" @prev-next-click="showQuote" />
+    <RouterView :show="show" :prev="prev" :next="next" :category="category" :today="today" @prev-next-click="showQuote"/>
   </section>
 </template>
 
