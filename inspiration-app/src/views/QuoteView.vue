@@ -13,11 +13,12 @@ export default {
     today: String,
   },
   methods: {
-    showQuoteParent(c, d) {
+    showQuoteParent: function(c, d) {
       console.log("showQuoteParent", c, d);
       // on button click show quote from fixture by category and pref/next day
       // emit a call from QuoteView (child) to run the showQuote in main App (parent) 
       this.$emit("prev-next-click", c, d);
+      console.log("this.show", this.show);
     },
     to: function (c=this.category, d=this.today) {
       return { name: 'quote', params: { category: c, day: d }}
@@ -25,6 +26,12 @@ export default {
     toSearch: function (a) {
       return { name: 'search', params: { author: a }}
     },
+  },
+  created() {
+    console.log("*** QuoteView is created.");
+    // on pageload show quote from URL by category and day
+    console.log("this.$route.params", this.$route.params);
+    this.showQuoteParent(this.$route.params.category, this.$route.params.day);
   }
 };
 </script>
