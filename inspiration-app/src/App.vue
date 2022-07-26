@@ -63,10 +63,8 @@ export default {
     },
   },
   created() {
-    console.log(quotes);
-    // on pageload show quote from URL by category and day
-    this.showQuote(this.$route.params.category, this.$route.params.day);
-    console.log(this.show);
+    console.log("*** App is created.");
+    console.log("all quotes are loaded", quotes);
   }
 }
 </script>
