@@ -6,15 +6,23 @@ Shows a predefined inspiration message of the day.
 
 ## Requirements
 
-No installation of additional packages is required. It will just work out of
-the box.
+The inspiration-app will require Node.js. [See guide](https://github.com/nodesource/distributions#debinstall)
+
+	$ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+	$ sudo apt-get install -y nodejs
 
 The JavaScript-Frameworks [Vue.js](https://vuejs.org/) and [Vue Router](https://router.vuejs.org/)
-will be included at runtime.
+will be used. [See guide](https://vuejs.org/guide/quick-start.html#with-build-tools)
 
-The following packages can be installed optionally:
+	$ npm init vue@latest
 
-	$ sudo apt install minify
+The console.log output should removed in deployment. [See guide](https://reactjsexample.com/a-vite-plugin-that-deletes-console-log-in-the-production-environment)
+
+	$ npm install vite-plugin-remove-console -D
+
+The npm daemon's from the `Makefile` are managed by pm2 globaly. [See guide](https://medium.com/idomongodb/how-to-npm-run-start-at-the-background-%EF%B8%8F-64ddda7c1f1) - Note: This is optional, otherwise you have to start npm manually.
+
+	$ sudo npm install pm2 -g
 
 ## Deployment
 
@@ -22,11 +30,11 @@ In this repo, you can simply run `make` to prepare the HTML files for deployment
 
 	$ make
 
-Now, you just need to put the `deploy` directory on a web server.
+Now, you just need to put the `dist` directory on a web server.
 
 ## Writing quotes
 
-Just edit `src/quotes.js` and write in your quotes.
+Just edit `quotes.js` and write in your quotes.
 
 With `LibreOffice Calc` it is a little bit easier:
 
@@ -65,4 +73,6 @@ const quotes = {
         }
     ]
 }
+
+export default quotes
 ```
