@@ -1,25 +1,27 @@
-FILES = res/google6234ba5ae9225c4a.html res/quotes.js res/.htaccess res/robots.txt
+FILES = res/google6234ba5ae9225c4a.html res/.htaccess res/robots.txt
 SERVER = tech@ganymed.uberspace.de
 HTDOCS = ~/www/www.kerngesund.com/
 
-production: clean
-	# use the minified version
-	sed -i "s/vue.js/vue.min.js/" deploy/index.html
-	sed -i "s/vue-router.js/vue-router.min.js/" deploy/index.html
-	# remove debug output
-	sed -i "/console.log/d" deploy/app.js
-	# minify code
-	command -v minify && minify --html-keep-document-tags --html-keep-end-tags -rv -o deploy deploy || true
+dev: clean jsdev build
+	# Start daemon for compile and hot-reload in development -> http://localhost:3000/
+	# cd inspiration-app && npm run dev
+	command -v pm2 && pm2 delete inspiration-app-dev >/dev/null 2>&1 || : && cd inspiration-app && pm2 --name inspiration-app-dev start "npm run dev" || true
 
-branding: clean
+preview: clean jsprod build branding
+	# Start daemon for preview with added branding before production -> http://localhost:4173/
+	# cd inspiration-app && npm run preview
+	command -v pm2 && pm2 delete inspiration-app-preview >/dev/null 2>&1 || : && cd inspiration-app && pm2 --name inspiration-app-preview start "npm run preview" || true
+
+branding: clean build
 	# l10n
-	sed -i "s/Inspiration of the day/Inspiration des Tages/g" deploy/index.html
-	sed -i "s/ past/ vergangenes/g" deploy/index.html
-	sed -i "s/next /n\&auml;chstes /g" deploy/index.html
+	sed -i "s/Inspiration of the day/Inspiration des Tages/g" inspiration-app/dist/index.html
+	sed -i "s/Inspiration of the day/Inspiration des Tages/g" inspiration-app/dist/assets/index.*.js
+	sed -i "s/<< past/\<< vergangenes/g" inspiration-app/dist/assets/index.*.js
+	sed -i "s/next >>/nächstes >>/g" inspiration-app/dist/assets/index.*.js
 	# search
-	sed -i "s/All inspirations from the same author./Alle Inspirationen vom selben Autor./g" deploy/app.js
+	sed -i "s/All inspirations from the same author./Alle Inspirationen vom selben Autor./g" inspiration-app/dist/assets/SearchView.*.js
 	# about
-	sed -i "s*Shows a predefined inspiration message of the day.</p>*Zeigt t\&auml;glich eine vordefinierte Inspirationsbotschaft an.</p><p>Kerngesund ist ein Projekt von <a title="www.andreas.peichert.com" href="http://www.andreas.peichert.com/" rel="me">Andreas Peichert</a>.</p>*" deploy/app.js
+	sed -i "s/Shows a predefined inspiration message of the day./Zeigt täglich eine vordefinierte Inspirationsbotschaft an. Kerngesund ist ein Projekt von Andreas Peichert./" inspiration-app/dist/assets/AboutView.*.js
 	# google
 	sed -i "s*</head>*\
 <!-- Global site tag (gtag.js) - Google Analytics -->\n\
@@ -30,18 +32,30 @@ branding: clean
   gtag('js', new Date());\n\
   gtag('config', 'G-QMWNCXPSRY');\n\
 </script>\n\
-</head>*g" deploy/index.html
+</head>*g" inspiration-app/dist/index.html
 	# branding
 	for i in $(FILES); do \
-		[ -e $$i ] && cp -v $$i deploy/; \
+		[ -e $$i ] && cp -v $$i inspiration-app/dist/; \
 	done
 
-install:
-	# copy deploy directory to server
-	scp deploy/* $(SERVER):$(HTDOCS)
+install: clean jsprod build branding
+	# copy dist directory to server
+	cd inspiration-app/dist && scp -r . $(SERVER):$(HTDOCS)
+
+jsdev:
+	# use quotes.js.dev
+	cd inspiration-app/src/assets/ && rm -f quotes.js && ln -s quotes.js.dev quotes.js
+
+jsprod:
+	# use quotes.js.prod
+	cd inspiration-app/src/assets/ && rm -f quotes.js && ln -s quotes.js.prod quotes.js
 
 clean:
-	# create directory for deployment
-	rm -rf deploy && cp -a src deploy
+	# clean
+	rm -rf inspiration-app/dist
 
-all: branding production install
+build:
+	# compile and minify for production
+	cd inspiration-app && npm run build
+
+all: branding preview
