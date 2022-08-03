@@ -71,17 +71,17 @@ export default {
 
 <template>
   <nav id="navigation" aria-label="Menu">
-    <span id="home"><RouterLink to="/"><img src="/favicon.ico"/></RouterLink></span>
+    <span id="home"><RouterLink to="/" @click="showQuote('happiness',today)"><img src="/favicon.ico"/></RouterLink></span>
     <label for="toggle-mobile-menu" aria-label="Menu">&#9776;</label>
     <input id="toggle-mobile-menu" type="checkbox" />
     <ul id="main-menu">
-      <li><RouterLink to="/">Home</RouterLink></li>
+      <li><RouterLink to="/" @click="showQuote('happiness',today)">Home</RouterLink></li>
       <RouterLink v-for="category in categories()" v-bind:key="category.id" :to="to(category)" @click="showQuote(category,today)"><li>{{ category }} </li></RouterLink>
       <li><RouterLink to="/about">About</RouterLink></li>
     </ul>
   </nav>
   <section>
-    <h1><RouterLink to="/">Inspiration of the day</RouterLink></h1>
+    <h1><RouterLink to="/" @click="showQuote('happiness',today)">Inspiration of the day</RouterLink></h1>
     <RouterView :show="show" :prev="prev" :next="next" :category="category" :today="today" @prev-next-click="showQuote"/>
   </section>
 </template>
