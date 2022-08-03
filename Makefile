@@ -40,7 +40,7 @@ branding: clean build
 
 install: clean jsprod build branding
 	# copy dist directory to server
-	scp -r inspiration-app/dist/ $(SERVER):$(HTDOCS)
+	cd inspiration-app/dist && scp -r . $(SERVER):$(HTDOCS)
 
 jsdev:
 	# use quotes.js.dev
