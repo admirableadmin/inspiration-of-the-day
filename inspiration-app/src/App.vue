@@ -48,7 +48,7 @@ export default {
       console.log("changeDay", day);
       var id = this.findDay(day, 0);
       this.show = this.quotes[id];
-      this.show.daylong = new Date(this.show.day + new Date().getFullYear()).toLocaleString("de-de", {day: "numeric", month: "long", year: "numeric"});
+      this.show.daylong = new Date(this.show.day + " " + new Date().getFullYear()).toLocaleString("de-de", {day: "numeric", month: "long", year: "numeric"});
       this.prev = '';
       if (id > 0)
         this.prev = this.quotes[id - 1].day;
