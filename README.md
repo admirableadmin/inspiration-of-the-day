@@ -76,3 +76,18 @@ const quotes = {
 
 export default quotes
 ```
+
+## Tests
+
+Screenshots of tests are done with [percy selenium](https://docs.percy.io/docs/python-selenium).
+
+Setup environment:
+
+	$ sudo apt install python3-pip firefox-geckodriver
+	$ pip install percy-selenium
+	inspiration-app$ npm install --save-dev @percy/cli
+
+Run the tests with snapshots:
+
+	$ PERCY_TOKEN=[your-projects-token]
+	$ make test

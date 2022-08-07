@@ -58,4 +58,8 @@ build:
 	# compile and minify for production
 	cd inspiration-app && npm run build
 
+test: dev
+	# run GUI tests with percy selenium
+	cd inspiration-app/ && node_modules/.bin/percy exec -- python3 tests/inspiration-app.py
+
 all: branding preview
