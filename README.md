@@ -89,5 +89,5 @@ Setup environment:
 
 Run the tests with snapshots:
 
-	$ PERCY_TOKEN=[your-projects-token]
+	$ export PERCY_TOKEN=[your-projects-token]
 	$ make test
