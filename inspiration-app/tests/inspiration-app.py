@@ -16,3 +16,6 @@ percy_snapshot(browser, 'Start State')
 toggle = browser.find_element(By.CLASS_NAME, 'button.next')
 toggle.click()
 percy_snapshot(browser, 'Next State')
+
+# clean up
+browser.quit()
