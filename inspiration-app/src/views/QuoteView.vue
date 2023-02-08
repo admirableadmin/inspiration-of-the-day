@@ -10,6 +10,7 @@ export default {
     prev: String,
     next: String,
     category: String,
+    categorySwitch: String,
     today: String,
   },
   methods: {
@@ -44,6 +45,7 @@ export default {
   </article>
   <nav>
     <RouterLink class="button prev" :to="to(category,prev)" v-if="prev" :title="prev" @click="showQuoteParent(category,prev)">&lt;&lt; past</RouterLink>
+    <RouterLink class="button category" :to="to(categorySwitch,show.day)" v-if="show.day" :title="categorySwitch" @click="showQuoteParent(categorySwitch,show.day)">&#8651;</RouterLink>
     <RouterLink class="button next" :to="to(category,next)" v-if="next" :title="next" @click="showQuoteParent(category,next)">next &gt;&gt;</RouterLink>
   </nav>
 </template>
