@@ -27,7 +27,7 @@ jobs:
       
       - name: Install dependencies
         run: |
-          sudo apt install -y python3-pip firefox-geckodriver
+          sudo apt install -y python3-pip
           pip install percy-selenium
       
       - name: Node clean install
