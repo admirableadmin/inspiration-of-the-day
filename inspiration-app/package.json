@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@percy/cli": "^1.8.0",
-    "@vitejs/plugin-vue": "^2.3.3",
+    "@vitejs/plugin-vue": "^2.3.4",
     "vite": "^2.9.14",
     "vite-plugin-remove-console": "^2.1.1"
   }
