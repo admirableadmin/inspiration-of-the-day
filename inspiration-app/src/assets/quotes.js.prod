@@ -1,4 +1,4 @@
- const quotes = {
+ const quotesjs = {
      happiness: [
     {
         "day": "1-jan",
@@ -3665,4 +3665,4 @@
 ]
 }
 
-export default quotes
+export default quotesjs

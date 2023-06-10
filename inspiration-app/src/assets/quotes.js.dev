@@ -1,4 +1,4 @@
-const quotes = {
+const quotesjs = {
     happiness: [
         {
             message: 'Hello Vue.js!',
@@ -39,4 +39,4 @@ const quotes = {
     ]
 }
 
-export default quotes
+export default quotesjs
