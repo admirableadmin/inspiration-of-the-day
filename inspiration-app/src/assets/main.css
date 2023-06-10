@@ -10,6 +10,7 @@ nav { width: 100%; margin-top: 30px; }
 a.button { padding: 8px 16px; background-color: #4CAF50; color: #fff; }
 a.button:hover { background-color: #333; }
 .prev { float: left; }
+.category { float: left; left: 50%; position: absolute; transform: translateX(-50%); }
 .next { float: right; }
 #navigation #home { float: left; padding: 8px; }
 #navigation #home a img { width: 32px; height: 32px; }
