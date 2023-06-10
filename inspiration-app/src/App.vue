@@ -8,6 +8,7 @@ export default {
   data() {
     return {
       category: '',
+      categorySwitch: '',
       quotes: '',
       today: this.newtoday(),
       prev: '',
@@ -23,6 +24,7 @@ export default {
     showQuote: function (c, d) {
       console.log("showQuote c", c, "d", d);
       this.changeCategory(c);
+      this.changeCategorySwitch(c);
       this.changeDay(d);
     },
     to: function (c=this.category, d=this.today) {
@@ -38,6 +40,13 @@ export default {
       this.category = Object.keys(quotesjs)[id];
       this.quotes = Object.values(quotesjs)[id];
       console.log("changeCategory this.category", this.category, "this.quotes", this.quotes);
+    },
+    changeCategorySwitch: function (category) {
+      var all = this.categories();
+      var other = all.filter(x => x !== category);
+      other.sort( function() { return 0.5 - Math.random() } );
+      this.categorySwitch = other[0];
+      console.log("changeCategorySwitch this.categorySwitch", this.categorySwitch);
     },
     findCategory: function (category, ifFalse) {
       const id = Object.keys(quotesjs).findIndex(q => q === category);
@@ -82,7 +91,7 @@ export default {
   </nav>
   <section>
     <h1><RouterLink to="/" @click="showQuote('happiness',today)">Inspiration of the day</RouterLink></h1>
-    <RouterView :show="show" :prev="prev" :next="next" :category="category" :today="today" @prev-next-click="showQuote"/>
+    <RouterView :show="show" :prev="prev" :next="next" :category="category" :categorySwitch="categorySwitch" :today="today" @prev-next-click="showQuote"/>
   </section>
 </template>
 
