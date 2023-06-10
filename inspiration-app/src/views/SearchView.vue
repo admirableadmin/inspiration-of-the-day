@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import quotes from '@/assets/quotes.js'
+import quotesjs from '@/assets/quotes.js'
 </script>
 
 <script>
@@ -13,11 +13,11 @@ props: {
       return { name: 'quote', params: { category: c, day: d }}
     },
     categories: function () {
-      return Object.keys(quotes);
+      return Object.keys(quotesjs);
     },
     filterAuthor: function (category, author) {
       console.log("filterAuthor", category, "author", author);
-      return quotes[category].filter(q => q.author === author);
+      return quotesjs[category].filter(q => q.author === author);
     }
   }
 };
