@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import quotes from '@/assets/quotes.js'
+import quotesjs from '@/assets/quotes.js'
 </script>
 
 <script>
@@ -29,18 +29,18 @@ export default {
       return { name: 'quote', params: { category: c, day: d }}
     },
     categories: function () {
-      return Object.keys(quotes);
+      return Object.keys(quotesjs);
     },
     changeCategory: function (category) {
       console.log("changeCategory", category);
       var id = this.findCategory(category, 0);
       console.log("changeCategory id", id);
-      this.category = Object.keys(quotes)[id];
-      this.quotes = Object.values(quotes)[id];
+      this.category = Object.keys(quotesjs)[id];
+      this.quotes = Object.values(quotesjs)[id];
       console.log("changeCategory this.category", this.category, "this.quotes", this.quotes);
     },
     findCategory: function (category, ifFalse) {
-      const id = Object.keys(quotes).findIndex(q => q === category);
+      const id = Object.keys(quotesjs).findIndex(q => q === category);
       console.log("findCategory", category, "id", id);
       return id !== -1 ? id : ifFalse;
     },
@@ -64,7 +64,7 @@ export default {
   },
   created() {
     console.log("*** App is created.");
-    console.log("all quotes are loaded", quotes);
+    console.log("all quotes are loaded from quotes.js", quotesjs);
   }
 }
 </script>
