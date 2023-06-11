@@ -20,23 +20,41 @@ The console.log output should removed in deployment. [See guide](https://reactjs
 
 	$ npm install vite-plugin-remove-console -D
 
-The npm daemon's from the `Makefile` are managed by pm2 globaly. [See guide](https://medium.com/idomongodb/how-to-npm-run-start-at-the-background-%EF%B8%8F-64ddda7c1f1) - Note: This is optional, otherwise you have to start npm manually.
+The npm daemon's from the `Makefile` are managed by pm2 globaly. [See guide](https://medium.com/idomongodb/how-to-npm-run-start-at-the-background-%EF%B8%8F-64ddda7c1f1) - Note: This is optional, otherwise you have to start npm manually (`npm run dev` or `npm run preview`).
 
 	$ sudo npm install pm2 -g
 
+Tests with screenshots are done with percy and python-selenium. [See guide](https://docs.percy.io/docs/python-selenium) - Note: This is optional, otherwise `make test` adds no value.
+
+	$ sudo apt install python3-pip firefox-geckodriver
+	$ pip install percy-selenium
+	inspiration-app$ npm install --save-dev @percy/cli
+
 ## Deployment
 
-In this repo, you can simply run `make` to prepare the HTML files for deployment:
+Start a daemon for compile and hot-reload in development on [http://localhost:3000/]
 
 	$ make
+	$ make dev
+
+Start daemon for preview with added branding before production on [http://localhost:4173/]
+
+	$ make prod
+
+Run the tests with screenshots
+
+	$ export PERCY_TOKEN=[your-projects-token]
+	$ make test
 
 Now, you just need to put the `dist` directory on a web server.
+
+	$ make install
 
 ## Writing quotes
 
 Just edit `quotes.js` and write in your quotes.
 
-With `LibreOffice Calc` it is a little bit easier:
+With *LibreOffice Calc* it is a little bit easier:
 
 1. create a list of all days
 
@@ -52,7 +70,7 @@ day | author | message
 For quotes on "happiness", the result might look like:
 
 ```
-const quotes = {
+const quotesjs = {
     happiness: [
         {
             message: 'Hello Vue.js!',
@@ -74,20 +92,10 @@ const quotes = {
     ]
 }
 
-export default quotes
+export default quotesjs
 ```
 
-## Tests
+## Credits quotes.js.prod
 
-Screenshots of tests are done with [percy selenium](https://docs.percy.io/docs/python-selenium).
-
-Setup environment:
-
-	$ sudo apt install python3-pip firefox-geckodriver
-	$ pip install percy-selenium
-	inspiration-app$ npm install --save-dev @percy/cli
-
-Run the tests with snapshots:
-
-	$ export PERCY_TOKEN=[your-projects-token]
-	$ make test
+* Tag für Tag Glück, ISBN‎ 978-3625117957
+* Tag für Tag Liebe, ISBN 978-3625117964
