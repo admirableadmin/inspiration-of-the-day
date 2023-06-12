@@ -95,7 +95,7 @@ const quotesjs = {
 export default quotesjs
 ```
 
-## Credits quotes.js.prod
+## Credits
 
-* Tag für Tag Glück, ISBN‎ 978-3625117957
+* Tag für Tag Glück, ISBN 978-3625117957
 * Tag für Tag Liebe, ISBN 978-3625117964
