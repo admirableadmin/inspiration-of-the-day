@@ -40,7 +40,6 @@ Quick start development after git clone
 
 Start a daemon for compile and hot-reload in development on [http://localhost:3000/]
 
-	$ make
 	$ make dev
 
 Start daemon for preview with added branding before production on [http://localhost:4173/]
