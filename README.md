@@ -30,6 +30,12 @@ Tests with screenshots are done with percy and python-selenium. [See guide](http
 	$ pip install percy-selenium
 	inspiration-app$ npm install --save-dev @percy/cli
 
+Quick start development after git clone
+
+	$ npm ci
+	$ cd inspiration-app
+	$ npm run dev
+
 ## Deployment
 
 Start a daemon for compile and hot-reload in development on [http://localhost:3000/]
