@@ -8,3 +8,7 @@ enableRobotsTXT = true
 [params]
   favicon = 'favicon.ico'
   site_logo = 'favicon.ico'
+  commentoEnable = true
+  custom_css = ['custom.css']
+  body_classes = 'avenir bg-dark-gray'
+  recent_posts_number = 1

@@ -1,0 +1,12 @@
+{{/* I do not use comments here, but with partials its a good place to add next and pref links
+  https://gohugo.io/templates/partials/
+  https://gohugo.io/methods/page/nextinsection/
+ */}}
+  <nav>
+  {{ with .NextInSection }}
+  <a href="{{ .RelPermalink }}" class="button prev">&lt;&lt; vergangenes</a>
+  {{ end }}
+  {{ with .PrevInSection }}
+  <a href="{{ .RelPermalink }}" class="button next">nächstes &gt;&gt;</a>
+  {{ end }}
+  </nav>

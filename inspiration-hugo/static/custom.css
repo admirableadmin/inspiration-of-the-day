@@ -1,0 +1,29 @@
+/* background */
+body { background-color: #333; background-image: url('/background.jpg'); height: 600px; background-position: center; background-repeat: no-repeat; background-size: cover;  position: relative; }
+/* nav */
+a.button { padding: 8px 16px; background-color: #4CAF50; color: #fff; text-decoration: none; }
+a.button:hover { background-color: #333; }
+.prev { float: left; }
+.next { float: right; }
+/* ananke */
+/* h1 headline padding-bottom: 8rem -> 0rem */
+.pb6-l { padding-bottom: 0rem !important; }
+/* h1 headline margin-top: 53.6 -> 0 */
+html body.ma0.avenir.bg-dark-gray header div.pb3-m.pb6-l.bg-black div.tc-l.pv3.ph3.ph4-ns h1.f2.f-subheadline-l.fw2.light-silver.mb0.lh-title { margin-top: 0px; }
+/* index multi page box "div" background-color */
+html body.ma0.avenir.bg-dark-gray main.pb7 div.pa3.pa4-ns.w-100.w-70-ns.center { background-color: #fff; }
+/* index single page box "article" background-color */
+html body.ma0.avenir.bg-dark-gray main.pb7 div.flex-l.mt2.mw8.center article.center.cf.pv5.ph3.ph4-ns.mw7 { background-color: #fff; }
+/* detail single page: round box */
+html body.ma0.avenir.bg-dark-gray main.pb7 article.flex-l.flex-wrap.justify-between.mw8.center.ph3 { background-color: #fff; border-radius: 1em; margin-top: 2em;}
+/* detail single page: nav buttons */
+.mt6 { margin-top: 4rem; }
+/* detail single page: no large view */
+@media screen and (min-width: 60em) {
+  .w-two-thirds-l {
+    width: 100%; /* 66.66667% */
+  }
+  .pr4-l {
+    padding-right: 0; /* 2rem */
+  }
+}
