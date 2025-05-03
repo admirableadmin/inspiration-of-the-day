@@ -8,7 +8,8 @@ Shows a predefined inspiration message of the day.
 
 The inspiration-app will require Node.js. [See guide](https://github.com/nodesource/distributions#debinstall)
 
-	$ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+	$ curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh
+	$ sudo -E bash nodesource_setup.sh
 	$ sudo apt-get install -y nodejs
 
 The JavaScript-Frameworks [Vue.js](https://vuejs.org/) and [Vue Router](https://router.vuejs.org/)
