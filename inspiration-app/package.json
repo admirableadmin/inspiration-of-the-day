@@ -2,7 +2,7 @@
   "name": "inspiration-app",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3000",
     "build": "vite build",
     "preview": "vite preview --port 4173"
   },
@@ -12,8 +12,8 @@
   },
   "devDependencies": {
     "@percy/cli": "^1.27.3",
-    "@vitejs/plugin-vue": "^2.3.4",
-    "vite": "^2.9.14",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "vite": "^6.3.4",
     "vite-plugin-remove-console": "^2.1.1"
   }
 }

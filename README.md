@@ -8,13 +8,18 @@ Shows a predefined inspiration message of the day.
 
 The inspiration-app will require Node.js. [See guide](https://github.com/nodesource/distributions#debinstall)
 
-	$ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+	$ curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh
+	$ sudo -E bash nodesource_setup.sh
 	$ sudo apt-get install -y nodejs
 
 The JavaScript-Frameworks [Vue.js](https://vuejs.org/) and [Vue Router](https://router.vuejs.org/)
 will be used. [See guide](https://vuejs.org/guide/quick-start.html#with-build-tools)
 
+	Start a new development
 	$ npm init vue@latest
+
+	Update development
+	inspiration-app$ npm update
 
 The console.log output should removed in deployment. [See guide](https://reactjsexample.com/a-vite-plugin-that-deletes-console-log-in-the-production-environment)
 
@@ -26,7 +31,7 @@ The npm daemon's from the `Makefile` are managed by pm2 globaly. [See guide](htt
 
 Tests with screenshots are done with percy and python-selenium. [See guide](https://docs.percy.io/docs/python-selenium) - Note: This is optional, otherwise `make test` adds no value.
 
-	$ sudo apt install python3-pip firefox-geckodriver
+	$ sudo apt install python3-pip firefox
 	$ pip install percy-selenium
 	inspiration-app$ npm install --save-dev @percy/cli
 
@@ -49,6 +54,7 @@ Start daemon for preview with added branding before production on [http://localh
 Run the tests with screenshots
 
 	$ export PERCY_TOKEN=[your-projects-token]
+	$ export SE_GECKODRIVER=/snap/bin/geckodriver
 	$ make test
 
 Now, you just need to put the `dist` directory on a web server.
