@@ -49,7 +49,7 @@ Start a daemon for compile and hot-reload in development on [http://localhost:30
 
 Start daemon for preview with added branding before production on [http://localhost:4173/]
 
-	$ make prod
+	$ make preview
 
 Run the tests with screenshots
 
