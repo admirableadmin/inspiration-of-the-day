@@ -1,10 +1,22 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-
+  <article>
+  <h2>{{ .Params.author }}</h2>
+  <!--{{ .Title }}-->
+  {{ .Content }}
   {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
   {{ $dateHuman := .Date | time.Format ":date_long" }}
+  <em>
   <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-
-  {{ .Content }}
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  </em>
+  </article>
+  <nav>
+  {{ $pages := .CurrentSection.Pages.ByWeight }}
+  {{ with $pages.Prev . }}
+    <a class="button prev" href="{{ .RelPermalink }}">&lt;&lt; past</a>
+  {{ end }}
+  {{ with $pages.Next . }}
+    <a class="button next" href="{{ .RelPermalink }}">next &gt;&gt;</a>
+  {{ end }}
+  </nav>
+  <!--{{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}-->
 {{ end }}

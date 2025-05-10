@@ -1,6 +1,15 @@
+{{- /*
+Renders Home
+1) content/_index.md
+2) all regular pages of today
+*/}}
+
 {{ define "main" }}
   {{ .Content }}
-  {{ range site.RegularPages }}
+  {{/* range site.RegularPages */}}
+  {{ $today := time (now.Format "2006-01-02") }}
+  <pre>{{ debug.Dump $today }}</pre>
+  {{ range where .Site.RegularPages "Date" "le" $today | first 1 }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     {{ .Summary }}
   {{ end }}
