@@ -11,7 +11,7 @@
     "vue-router": "^5.3.1"
   },
   "devDependencies": {
-    "@percy/cli": "^1.32.8",
+    "@percy/cli": "^1.32.12",
     "@vitejs/plugin-vue": "^6.0.10",
     "vite": "^8.3.0",
     "vite-plugin-remove-console": "^2.1.1"
